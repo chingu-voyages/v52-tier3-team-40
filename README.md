@@ -1,8 +1,7 @@
-## [**The Space Discovery App**]
+## The Space Discovery App
 
 ## Table of Contents
 
-- [\[**The Space Discovery App**\]](#the-space-discovery-app)
 - [Table of Contents](#table-of-contents)
 - [About](#about)
 - [Technologies Used](#technologies-used)

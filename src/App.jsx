@@ -1,16 +1,8 @@
-import './index.css'
-import Rover from './Rover'
+import React from "react";
+import HomeLayout from './layout/HomeLayout'
 
-function App() {
-
-  return (
-    <>
-      <div className="text-5xl font-bold text-grey-500">
-        The Space Discovery App
-      </div>
-      <Rover/>
-    </>
-  )
-}
+const App = () => {
+  return <HomeLayout />;
+};
 
 export default App

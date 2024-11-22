@@ -40,8 +40,8 @@ const Rover = () => {
         >
           Spirit
         </button>
-        {openInfo && <RoverInfo selectedRover={selectedRover}/>}
       </div>
+      {openInfo && <RoverInfo selectedRover={selectedRover}/>}
     </div>
   )
 }

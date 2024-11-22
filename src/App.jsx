@@ -1,14 +1,8 @@
-import './index.css'
+import React from "react";
+import HomeLayout from './layout/HomeLayout'
 
-function App() {
+const App = () => {
+  return <HomeLayout />;
+};
 
-  return (
-    <>
-      <div className="text-5xl font-bold text-grey-500">
-        The Space Discovery App
-      </div>
-    </>
-  )
-}
-
-export default App
+export default App;

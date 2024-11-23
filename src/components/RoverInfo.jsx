@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import RoverPhotosDisplay from './RoverPhotosDisplay'
 
 const RoverInfo = ({selectedRover}) => {
 	const apiKey = process.env.VITE_NASA_API_KEY
@@ -21,7 +22,6 @@ const RoverInfo = ({selectedRover}) => {
 		}
 
 	}, [selectedRover])
-
 
   return (
     <div>
@@ -57,9 +57,12 @@ const RoverInfo = ({selectedRover}) => {
       				</div>
       				<div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
         				<dt className="text-sm/6 font-medium text-gray-900">Cameras</dt>
-        				<dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">{String(roverInfo.cameras)}</dd>
+        				<dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">
+							{roverInfo.cameras.map((camera)=><button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4">{camera.full_name}</button>)}
+							<RoverPhotosDisplay rover={selectedRover}/>
+						</dd>
       				</div>
-						</dl>
+					</dl>
   				</div>
 				</div>
 			}

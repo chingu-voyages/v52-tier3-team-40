@@ -11,11 +11,11 @@ const HomeLayout = () => {
       </section>
 
       <main className="w-full">
-        <div className="w-full px-4 py-16 space-y-16">
-          <div className="flex justify-center w-full h-screen">
+        <div className="w-full px-4 py-10 space-y-8">
+          <div className="flex justify-center w-full">
             <Component1 />
           </div>
-          <div className="flex justify-center w-full h-screen">
+          <div className="flex justify-center w-full">
             <Component2 />
           </div>
         </div>

@@ -1,0 +1,212 @@
+[
+  {
+    "day": 1,
+    "questions": [
+      {
+        "question": "What is the largest planet in our solar system?",
+        "options": ["Earth", "Jupiter", "Saturn", "Neptune"],
+        "answer": "Jupiter"
+      },
+      {
+        "question": "What is the name of the galaxy we live in?",
+        "options": ["Andromeda", "Milky Way", "Whirlpool", "Triangulum"],
+        "answer": "Milky Way"
+      },
+      {
+        "question": "What is the smallest planet in our solar system?",
+        "options": ["Mars", "Mercury", "Venus", "Pluto"],
+        "answer": "Mercury"
+      },
+      {
+        "question": "Which planet is known as the 'Red Planet'?",
+        "options": ["Venus", "Saturn", "Mars", "Mercury"],
+        "answer": "Mars"
+      },
+      {
+        "question": "What is the main component of the Sun?",
+        "options": ["Oxygen", "Carbon", "Hydrogen", "Helium"],
+        "answer": "Hydrogen"
+      }
+    ]
+  },
+  {
+    "day": 2,
+    "questions": [
+      {
+        "question": "Which planet has the most moons?",
+        "options": ["Jupiter", "Saturn", "Neptune", "Uranus"],
+        "answer": "Saturn"
+      },
+      {
+        "question": "What is the closest star to Earth?",
+        "options": ["Sirius", "Proxima Centauri", "Alpha Centauri", "Polaris"],
+        "answer": "Proxima Centauri"
+      },
+      {
+        "question": "What is the term for a star that has collapsed under gravity?",
+        "options": ["Red Giant", "Black Hole", "White Dwarf", "Neutron Star"],
+        "answer": "Black Hole"
+      },
+      {
+        "question": "Which planet has the Great Red Spot?",
+        "options": ["Mars", "Jupiter", "Neptune", "Saturn"],
+        "answer": "Jupiter"
+      },
+      {
+        "question": "What protects Earth from harmful solar radiation?",
+        "options": ["Magnetosphere", "Stratosphere", "Troposphere", "Ozone Layer"],
+        "answer": "Magnetosphere"
+      }
+    ]
+  },
+  {
+    "day": 3,
+    "questions": [
+      {
+        "question": "What is the brightest object in the night sky?",
+        "options": ["Polaris", "Venus", "Sirius", "Betelgeuse"],
+        "answer": "Venus"
+      },
+      {
+        "question": "What is a comet primarily made of?",
+        "options": ["Rock", "Ice and dust", "Metal", "Gas"],
+        "answer": "Ice and dust"
+      },
+      {
+        "question": "What is the term for the boundary of a black hole?",
+        "options": ["Event Horizon", "Schwarzschild Radius", "Singularity", "Gravitational Limit"],
+        "answer": "Event Horizon"
+      },
+      {
+        "question": "Which is the hottest planet in our solar system?",
+        "options": ["Mercury", "Venus", "Mars", "Jupiter"],
+        "answer": "Venus"
+      },
+      {
+        "question": "What do we call the birth of a star?",
+        "options": ["Supernova", "Protostar Formation", "Nebula Collapse", "White Dwarf Creation"],
+        "answer": "Protostar Formation"
+      }
+    ]
+  },
+  {
+    "day": 4,
+    "questions": [
+      {
+        "question": "What is the name of the first artificial satellite launched into space?",
+        "options": ["Sputnik 1", "Explorer 1", "Voyager 1", "Apollo 11"],
+        "answer": "Sputnik 1"
+      },
+      {
+        "question": "Which planet is known for its prominent ring system?",
+        "options": ["Saturn", "Jupiter", "Uranus", "Neptune"],
+        "answer": "Saturn"
+      },
+      {
+        "question": "What is the term for a rock that enters Earth's atmosphere and burns up?",
+        "options": ["Asteroid", "Meteor", "Comet", "Meteoroid"],
+        "answer": "Meteor"
+      },
+      {
+        "question": "Which mission first landed humans on the Moon?",
+        "options": ["Apollo 11", "Apollo 13", "Apollo 8", "Apollo 12"],
+        "answer": "Apollo 11"
+      },
+      {
+        "question": "What type of galaxy is the Milky Way?",
+        "options": ["Elliptical", "Spiral", "Irregular", "Lenticular"],
+        "answer": "Spiral"
+      }
+    ]
+  },
+  {
+    "day": 5,
+    "questions": [
+      {
+        "question": "What is the smallest type of star?",
+        "options": ["Red Dwarf", "White Dwarf", "Brown Dwarf", "Neutron Star"],
+        "answer": "White Dwarf"
+      },
+      {
+        "question": "What is the name of NASA's most famous space telescope?",
+        "options": ["Hubble", "James Webb", "Chandra", "Spitzer"],
+        "answer": "Hubble"
+      },
+      {
+        "question": "What is the term for the explosion of a dying star?",
+        "options": ["Supernova", "Hypernova", "Nova", "Solar Flare"],
+        "answer": "Supernova"
+      },
+      {
+        "question": "What causes a solar eclipse?",
+        "options": ["Earth passes between the Sun and the Moon", "Moon passes between the Earth and the Sun", "The Sun passes between Earth and the Moon", "Mars blocks the Sun"],
+        "answer": "Moon passes between the Earth and the Sun"
+      },
+      {
+        "question": "Which planet rotates on its side?",
+        "options": ["Neptune", "Uranus", "Venus", "Mercury"],
+        "answer": "Uranus"
+      }
+    ]
+  },
+  {
+    "day": 6,
+    "questions": [
+      {
+        "question": "Which planet is farthest from the Sun?",
+        "options": ["Neptune", "Uranus", "Pluto", "Saturn"],
+        "answer": "Neptune"
+      },
+      {
+        "question": "What is the term for the path a planet takes around the Sun?",
+        "options": ["Rotation", "Orbit", "Revolution", "Trajectory"],
+        "answer": "Orbit"
+      },
+      {
+        "question": "What are Saturn's rings primarily made of?",
+        "options": ["Dust and Gas", "Ice and Rock", "Metal and Stone", "Water Vapor"],
+        "answer": "Ice and Rock"
+      },
+      {
+        "question": "What is the densest planet in our solar system?",
+        "options": ["Earth", "Mars", "Venus", "Neptune"],
+        "answer": "Earth"
+      },
+      {
+        "question": "What is the name of the first person to orbit the Earth?",
+        "options": ["Neil Armstrong", "Yuri Gagarin", "Buzz Aldrin", "Alan Shepard"],
+        "answer": "Yuri Gagarin"
+      }
+    ]
+  },
+  {
+    "day": 7,
+    "questions": [
+      {
+        "question": "What is the name of our Sun’s outer atmosphere?",
+        "options": ["Corona", "Chromosphere", "Photosphere", "Magnetosphere"],
+        "answer": "Corona"
+      },
+      {
+        "question": "Which planet has the longest day?",
+        "options": ["Mercury", "Venus", "Earth", "Neptune"],
+        "answer": "Venus"
+      },
+      {
+        "question": "What is the approximate age of the Universe?",
+        "options": ["4.5 billion years", "13.8 billion years", "10 billion years", "15.7 billion years"],
+        "answer": "13.8 billion years"
+      },
+      {
+        "question": "What type of celestial object is Halley's Comet?",
+        "options": ["Asteroid", "Comet", "Meteor", "Dwarf Planet"],
+        "answer": "Comet"
+      },
+      {
+        "question": "What is the speed of light in a vacuum?",
+        "options": ["300,000 km/s", "150,000 km/s", "1,000,000 km/s", "500,000 km/s"],
+        "answer": "300,000 km/s"
+      }
+    ]
+  }
+]

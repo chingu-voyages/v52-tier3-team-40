@@ -2,6 +2,7 @@ import Header from '../components/Header'
 import Component1 from '../components/Component1'
 import Component2 from '../components/Component2'
 import Footer from '../components/Footer'
+import DailyQuiz from '../components/DailyQuiz'
 
 const HomeLayout = () => {
   return (
@@ -17,6 +18,9 @@ const HomeLayout = () => {
           </div>
           <div className="flex justify-center w-full h-screen">
             <Component2 />
+          </div>
+          <div className="flex justify-center w-full h-screen">
+            <DailyQuiz />
           </div>
         </div>
       </main>

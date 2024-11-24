@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import RoverPhotosDisplay from './RoverPhotosDisplay'
+import { fetchPhotosForLast10Sols } from './RoverHelper'
 
 const RoverInfo = ({selectedRover}) => {
 	const apiKey = process.env.VITE_NASA_API_KEY
+	const [photos, setPhotos] = useState([])
 	const [roverInfo, setRoverInfo] = useState("")
+	const [isFetchingPhotosComplete, setIsFetchingPhotosComplete] = useState(false)
+	const [selectedCamera, setSelectedCamera] = useState("")
 
 	useEffect(()=> {
-		const fetchManifest = async ()=>{
+		const fetchRoverInfo = async ()=>{
 			try {
 				const response = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/${selectedRover}?&api_key=${apiKey}`)
 				const data = await response.json()
@@ -18,10 +22,28 @@ const RoverInfo = ({selectedRover}) => {
 		
 		if (selectedRover) {
 			setRoverInfo("")
-			fetchManifest();
+			setIsFetchingPhotosComplete(false)
+			fetchRoverInfo();
 		}
 
 	}, [selectedRover])
+
+	useEffect(()=> {
+		const fetchPhotos = async () => {
+      try {
+        const photos = await fetchPhotosForLast10Sols(roverInfo.name, roverInfo.max_sol);
+        console.log(`Found ${photos.length} photos from the last 10 sols!`);
+        setPhotos(photos);
+				setIsFetchingPhotosComplete(true);
+      } catch (error) {
+        console.error("Error fetching photos:", error);
+      }
+    };
+		
+		if (roverInfo){
+			fetchPhotos(); // Call the async function
+		}
+	}, [roverInfo])
 
   return (
     <div>
@@ -58,8 +80,24 @@ const RoverInfo = ({selectedRover}) => {
       				<div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
         				<dt className="text-sm/6 font-medium text-gray-900">Cameras</dt>
         				<dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">
-							{roverInfo.cameras.map((camera)=><button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4">{camera.full_name}</button>)}
-							<RoverPhotosDisplay rover={selectedRover}/>
+							{roverInfo.cameras.map((camera)=>
+								<button 
+									className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4" 
+									key={camera.name}
+									onClick={()=>setSelectedCamera(camera.name)}
+								>
+									{camera.full_name}
+								</button>
+							)}
+							{selectedCamera && (
+								isFetchingPhotosComplete ? 
+									<RoverPhotosDisplay 
+										photos={photos}
+										camera={selectedCamera}
+									/>
+								:
+									<p>Loading...</p> 
+							)}
 						</dd>
       				</div>
 					</dl>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import RoverPhotosDisplay from './RoverPhotosDisplay'
-import { fetchPhotosForLast10Sols } from './RoverHelper'
+import { fetchPhotosForLast5Sols } from './RoverHelper'
 
 const RoverInfo = ({selectedRover}) => {
 	const apiKey = process.env.VITE_NASA_API_KEY
@@ -9,20 +9,24 @@ const RoverInfo = ({selectedRover}) => {
 	const [isFetchingPhotosComplete, setIsFetchingPhotosComplete] = useState(false)
 	const [selectedCamera, setSelectedCamera] = useState("")
 
+	const isSpiritOrOpportunity = selectedRover === "spirit" || selectedRover === "opportunity"
+
 	useEffect(()=> {
-		const fetchRoverInfo = async ()=>{
+		const fetchRoverInfo = async ()=> {
 			try {
 				const response = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/${selectedRover}?&api_key=${apiKey}`)
 				const data = await response.json()
 				setRoverInfo(data.rover)
 			} catch (error) {
-			console.error(error)
+				console.error(error)
 			}
 		};
 		
 		if (selectedRover) {
 			setRoverInfo("")
 			setIsFetchingPhotosComplete(false)
+			setSelectedCamera("")
+			setPhotos([])
 			fetchRoverInfo();
 		}
 
@@ -30,14 +34,17 @@ const RoverInfo = ({selectedRover}) => {
 
 	useEffect(()=> {
 		const fetchPhotos = async () => {
-      try {
-        const photos = await fetchPhotosForLast10Sols(roverInfo.name, roverInfo.max_sol);
-        console.log(`Found ${photos.length} photos from the last 10 sols!`);
-        setPhotos(photos);
-				setIsFetchingPhotosComplete(true);
-      } catch (error) {
-        console.error("Error fetching photos:", error);
-      }
+			//Mars Rover API are not returning Opportunity and Spirit images
+			if (!isSpiritOrOpportunity) {
+				try {
+					const photos = await fetchPhotosForLast5Sols(roverInfo.name, roverInfo.max_sol);
+					console.log(`Found ${photos?.length} photos from the last 10 sols!`);
+					setPhotos(photos);
+					setIsFetchingPhotosComplete(true);
+				} catch (error) {
+					console.error("Error fetching photos:", error);
+				}
+			}
     };
 		
 		if (roverInfo){
@@ -45,8 +52,10 @@ const RoverInfo = ({selectedRover}) => {
 		}
 	}, [roverInfo])
 
+
+
   return (
-    <div>
+    <>
       {!roverInfo ? 
 				<p>Loading...</p> 
 				: 
@@ -82,13 +91,22 @@ const RoverInfo = ({selectedRover}) => {
         				<dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">
 							{roverInfo.cameras.map((camera)=>
 								<button 
-									className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4" 
+									className={`font-bold py-2 px-4 bg-gray-300 ${
+										isSpiritOrOpportunity 
+											? "text-gray-500 cursor-not-allowed" 
+											: "hover:bg-gray-400 text-gray-800"
+									}`} 
+									disabled={isSpiritOrOpportunity}
 									key={camera.name}
 									onClick={()=>setSelectedCamera(camera.name)}
 								>
 									{camera.full_name}
 								</button>
 							)}
+							{isSpiritOrOpportunity && <p>Sorry, images from Spirit and Opportunity can not be fetched.</p>}
+						</dd>
+      				</div>
+					</dl>
 							{selectedCamera && (
 								isFetchingPhotosComplete ? 
 									<RoverPhotosDisplay 
@@ -98,13 +116,10 @@ const RoverInfo = ({selectedRover}) => {
 								:
 									<p>Loading...</p> 
 							)}
-						</dd>
-      				</div>
-					</dl>
   				</div>
 				</div>
 			}
-    </div>
+    </>
   )
 }
 

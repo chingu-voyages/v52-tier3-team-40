@@ -38,7 +38,7 @@ const RoverInfo = ({selectedRover}) => {
 			if (!isSpiritOrOpportunity) {
 				try {
 					const photos = await fetchPhotosForLast5Sols(roverInfo.name, roverInfo.max_sol);
-					console.log(`Found ${photos?.length} photos from the last 10 sols!`);
+					console.log(`Found ${photos?.length} photos from the last 5 sols!`);
 					setPhotos(photos);
 					setIsFetchingPhotosComplete(true);
 				} catch (error) {
@@ -61,40 +61,40 @@ const RoverInfo = ({selectedRover}) => {
 				: 
 				<div>
 					<div className="px-4 sm:px-0">
-    				<h3 className="text-base/7 font-semibold text-gray-900">Rover Information</h3>
-    				<p className="mt-1 max-w-2xl text-sm/6 text-gray-500">Status: {roverInfo.status}</p>
+    				<h3 className="text-base/7 font-semibold text-gray-100">Rover Information</h3>
+    				<p className="mt-1 max-w-2xl text-sm/6 text-gray-100">Status: {roverInfo.status}</p>
   				</div>
   				<div className="mt-6 border-t border-gray-100">
     				<dl className="divide-y divide-gray-100">
       				<div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-        				<dt className="text-sm/6 font-medium text-gray-900">Rover Name</dt>
-        				<dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">{roverInfo.name}</dd>
+        				<dt className="text-sm/6 font-medium text-gray-100">Rover Name</dt>
+        				<dd className="mt-1 text-sm/6 text-gray-100 sm:col-span-2 sm:mt-0">{roverInfo.name}</dd>
       				</div>
       				<div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-        				<dt className="text-sm/6 font-medium text-gray-900">Launch Date</dt>
-        				<dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">{roverInfo.launch_date}</dd>
+        				<dt className="text-sm/6 font-medium text-gray-100">Launch Date</dt>
+        				<dd className="mt-1 text-sm/6 text-gray-100 sm:col-span-2 sm:mt-0">{roverInfo.launch_date}</dd>
       				</div>
       				<div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-        				<dt className="text-sm/6 font-medium text-gray-900">Landing Date</dt>
-        				<dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">{roverInfo.landing_date}</dd>
+        				<dt className="text-sm/6 font-medium text-gray-100">Landing Date</dt>
+        				<dd className="mt-1 text-sm/6 text-gray-100 sm:col-span-2 sm:mt-0">{roverInfo.landing_date}</dd>
       				</div>
       				<div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-        				<dt className="text-sm/6 font-medium text-gray-900">Maximum Sol (Martian Rotation/Day)</dt>
-        				<dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">{roverInfo.max_sol}</dd>
+        				<dt className="text-sm/6 font-medium text-gray-100">Maximum Sol (Martian Rotation/Day)</dt>
+        				<dd className="mt-1 text-sm/6 text-gray-100 sm:col-span-2 sm:mt-0">{roverInfo.max_sol}</dd>
       				</div>
 							<div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-        				<dt className="text-sm/6 font-medium text-gray-900">Total Photos Taken</dt>
-        				<dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">{roverInfo.total_photos}</dd>
+        				<dt className="text-sm/6 font-medium text-gray-100">Total Photos Taken</dt>
+        				<dd className="mt-1 text-sm/6 text-gray-100 sm:col-span-2 sm:mt-0">{roverInfo.total_photos}</dd>
       				</div>
       				<div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-        				<dt className="text-sm/6 font-medium text-gray-900">Cameras</dt>
-        				<dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">
+        				<dt className="text-sm/6 font-medium text-gray-100">Cameras</dt>
+        				<dd className="mt-1 text-sm/6 text-gray-100 sm:col-span-2 sm:mt-0">
 							{roverInfo.cameras.map((camera)=>
 								<button 
 									className={`font-bold py-2 px-4 ${
 										isSpiritOrOpportunity 
-											? "text-gray-500 cursor-not-allowed" 
-											: "hover:bg-gray-400 text-gray-800"
+											? "text-gray-100 cursor-not-allowed" 
+											: "hover:bg-gray-400 text-gray-100"
 										} ${
 										selectedCamera === camera.name 
 											? "bg-red-500 hover:bg-red-500"

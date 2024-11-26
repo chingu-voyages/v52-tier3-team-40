@@ -8,13 +8,13 @@ const Rover = () => {
 
 
   return (
-    <div className="w-full max-w-7xl px-4 py-6 bg-gray-200 rounded-3xl shadow-lg ">
+    <div className="w-full max-w-7xl px-4 py-6 bg-gray-800 rounded-3xl shadow-lg ">
       <h2 className="text-lg font-semibold">Mars Rover</h2>
       <p>This is the rover component of the homepage.</p>
       <p>Pick your rover</p>
       <div className="inline-flex">
         <button 
-            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
+            className="bg-gray-300 hover:bg-gray-400 text-gray-500 font-bold py-2 px-4 rounded-l"
             onClick={()=>{
               setSelectedRover("perseverance")
               setOpenInfo(true)
@@ -23,7 +23,7 @@ const Rover = () => {
           Perseverance
         </button>
         <button 
-          className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4"
+          className="bg-gray-300 hover:bg-gray-400 text-gray-500 font-bold py-2 px-4"
           onClick={()=>{
             setSelectedRover("curiosity")
             setOpenInfo(true)
@@ -32,7 +32,7 @@ const Rover = () => {
           Curiosity
         </button>
         <button 
-          className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4"
+          className="bg-gray-300 hover:bg-gray-400 text-gray-500 font-bold py-2 px-4"
           onClick={()=>{
             setSelectedRover("opportunity")
             setOpenInfo(true)
@@ -41,7 +41,7 @@ const Rover = () => {
           Opportunity
         </button>
         <button 
-          className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r"
+          className="bg-gray-300 hover:bg-gray-400 text-gray-500 font-bold py-2 px-4 rounded-r"
           onClick={()=>{
             setSelectedRover("spirit")
             setOpenInfo(true)

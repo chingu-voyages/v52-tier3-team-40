@@ -19,8 +19,8 @@ const RoverPhotosDisplay = ({photos, camera}) => {
   return (
     <>
     {!filterPhotos.length ? 
-          <p >
-            Sorry there were no photos taken by {camera}in the last 5 sol.
+          <p className="font-bold text-xl">
+            Sorry there were no photos taken by {camera} in the last 5 sols.
           </p>
           :
     <div className="relative w-full">
@@ -80,7 +80,6 @@ const RoverPhotosDisplay = ({photos, camera}) => {
         </div>
       </div>
     )}
-    <div>Hello</div>
     </div>
   }
   </>

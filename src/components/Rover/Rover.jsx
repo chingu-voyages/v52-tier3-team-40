@@ -8,7 +8,7 @@ const Rover = () => {
 
 
   return (
-    <div className="w-full px-4 py-6 bg-gray-200 relative">
+    <div className="w-full max-w-7xl px-4 py-6 bg-gray-200 rounded-3xl shadow-lg ">
       <h2 className="text-lg font-semibold">Mars Rover</h2>
       <p>This is the rover component of the homepage.</p>
       <p>Pick your rover</p>

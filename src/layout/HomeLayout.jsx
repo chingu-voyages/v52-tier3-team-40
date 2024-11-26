@@ -19,7 +19,7 @@ const HomeLayout = () => {
           <div className="flex justify-center w-full">
             <Component2 />
           </div>
-          <div className="flex justify-center w-full h-screen">
+          <div className="flex justify-center w-full">
             <Rover />
           </div>
         </div>

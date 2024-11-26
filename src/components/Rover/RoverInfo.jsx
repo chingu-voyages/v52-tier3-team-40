@@ -57,7 +57,7 @@ const RoverInfo = ({selectedRover}) => {
   return (
     <>
       {!roverInfo ? 
-				<p>Loading...</p> 
+				<p className="font-bold text-xl">Loading...</p> 
 				: 
 				<div>
 					<div className="px-4 sm:px-0">
@@ -91,11 +91,16 @@ const RoverInfo = ({selectedRover}) => {
         				<dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">
 							{roverInfo.cameras.map((camera)=>
 								<button 
-									className={`font-bold py-2 px-4 bg-gray-300 ${
+									className={`font-bold py-2 px-4 ${
 										isSpiritOrOpportunity 
 											? "text-gray-500 cursor-not-allowed" 
 											: "hover:bg-gray-400 text-gray-800"
-									}`} 
+										} ${
+										selectedCamera === camera.name 
+											? "bg-red-500 hover:bg-red-500"
+											: "bg-gray-300"	
+										}`
+									} 
 									disabled={isSpiritOrOpportunity}
 									key={camera.name}
 									onClick={()=>setSelectedCamera(camera.name)}
@@ -103,7 +108,7 @@ const RoverInfo = ({selectedRover}) => {
 									{camera.full_name}
 								</button>
 							)}
-							{isSpiritOrOpportunity && <p>Sorry, images from Spirit and Opportunity can not be fetched.</p>}
+							{isSpiritOrOpportunity && <p className='text-lg text-bold text-red-500'>Sorry, images from Spirit and Opportunity can not be fetched.</p>}
 						</dd>
       				</div>
 					</dl>
@@ -114,7 +119,7 @@ const RoverInfo = ({selectedRover}) => {
 										camera={selectedCamera}
 									/>
 								:
-									<p>Loading...</p> 
+									<p className="font-bold text-xl">Loading...</p> 
 							)}
   				</div>
 				</div>

@@ -26,7 +26,7 @@ const RoverPhotosDisplay = ({photos, camera}) => {
     <div className="relative w-full">
       {/* Scroll Left Button */}
       <button
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-gray-800 text-white p-2 rounded-full shadow-md"
+        className="absolute -left-4 top-1/2 transform -translate-y-1/2 z-10 bg-gray-800 text-white p-2 rounded-full shadow-md"
         onClick={scrollLeft}
       >
         ←
@@ -51,17 +51,17 @@ const RoverPhotosDisplay = ({photos, camera}) => {
 
       {/* Scroll Right Button */}
       <button
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-gray-800 text-white p-2 rounded-full shadow-md"
+        className="absolute -right-4 top-1/2 transform -translate-y-1/2 z-10 bg-gray-800 text-white p-2 rounded-full shadow-md"
         onClick={scrollRight}
       >
         →
       </button>
 
       {selectedPhoto && (
-      <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-        <div className="bg-white p-6 rounded-lg max-w-md w-full">
+      <div className="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center transition-opacity justify-center z-50">
+        <div className="bg-white p-6 md:p-10 rounded-lg max-w-3xl w-full relative">
           <button
-            className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
+            className="absolute top-1 md:top-2 right-2 md:right-3 text-1xl md:text-2xl font-bold text-gray-500 hover:text-gray-900"
             onClick={() => setSelectedPhoto(null)}
           >
             ✕
@@ -71,10 +71,12 @@ const RoverPhotosDisplay = ({photos, camera}) => {
             alt={selectedPhoto.camera.full_name}
             className="rounded-lg mb-4"
           />
-          <h3 className="text-lg font-bold">{selectedPhoto.camera.full_name}</h3>
-          <p className="text-gray-600">Sol: {selectedPhoto.sol}</p>
-          <p className="text-gray-600">Earth Date: {selectedPhoto.earth_date}</p>
-          <p className="text-gray-600">Rover: {selectedPhoto.rover.name}</p>
+          <div className="mx-48">
+            <h3 className="text-lg font-bold">{selectedPhoto.camera.full_name}</h3>
+            <p className="text-gray-600">Sol: {selectedPhoto.sol}</p>
+            <p className="text-gray-600">Earth Date: {selectedPhoto.earth_date}</p>
+            <p className="text-gray-600 ">Rover: {selectedPhoto.rover.name}</p>
+          </div>
         </div>
       </div>
     )}

@@ -1,7 +1,7 @@
-import Header from '../components/Header'
-import PotdComponent from '../components/PotdComponent'
-import Component2 from '../components/Component2'
-import Footer from '../components/Footer'
+import Header from "../components/Header";
+import Component1 from "../components/Component1";
+import Component2 from "../components/Component2";
+import Footer from "../components/Footer/Footer";
 
 const HomeLayout = () => {
   return (
@@ -25,7 +25,7 @@ const HomeLayout = () => {
         <Footer />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default HomeLayout 
+export default HomeLayout;

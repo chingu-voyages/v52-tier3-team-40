@@ -6,7 +6,7 @@ import Rover from "../components/Rover/Rover";
 
 const HomeLayout = () => {
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full font-mono bg-black text-white">
       <section className="h-screen w-full">
         <Header />
       </section>
@@ -14,7 +14,7 @@ const HomeLayout = () => {
       <main className="w-full">
         <div className="w-full px-4 py-10 space-y-8">
           <div className="flex justify-center w-full">
-            <Component1 />
+            <PotdComponent />
           </div>
           <div className="flex justify-center w-full">
             <Component2 />

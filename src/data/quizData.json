@@ -68,9 +68,9 @@
         "answer": "Venus"
       },
       {
-        "question": "What is a comet primarily made of?",
-        "options": ["Rock", "Ice and dust", "Metal", "Gas"],
-        "answer": "Ice and dust"
+        "question": "What are Saturn's rings primarily made of?",
+        "options": ["Dust and Gas", "Ice and Rock", "Metal and Stone", "Water Vapor"],
+        "answer": "Ice and Rock"
       },
       {
         "question": "What is the term for the boundary of a black hole?",
@@ -143,9 +143,9 @@
         "answer": "Moon passes between the Earth and the Sun"
       },
       {
-        "question": "Which planet rotates on its side?",
-        "options": ["Neptune", "Uranus", "Venus", "Mercury"],
-        "answer": "Uranus"
+        "question": "What is the speed of light in a vacuum?",
+        "options": ["300,000 km/s", "150,000 km/s", "1,000,000 km/s", "500,000 km/s"],
+        "answer": "300,000 km/s"
       }
     ]
   },
@@ -158,14 +158,14 @@
         "answer": "Neptune"
       },
       {
-        "question": "What is the term for the path a planet takes around the Sun?",
-        "options": ["Rotation", "Orbit", "Revolution", "Trajectory"],
-        "answer": "Orbit"
+        "question": "What is the approximate age of the Universe?",
+        "options": ["4.5 billion years", "13.8 billion years", "10 billion years", "15.7 billion years"],
+        "answer": "13.8 billion years"
       },
       {
-        "question": "What are Saturn's rings primarily made of?",
-        "options": ["Dust and Gas", "Ice and Rock", "Metal and Stone", "Water Vapor"],
-        "answer": "Ice and Rock"
+        "question": "Which planet has the longest day?",
+        "options": ["Mercury", "Venus", "Earth", "Neptune"],
+        "answer": "Venus"
       },
       {
         "question": "What is the densest planet in our solar system?",
@@ -183,30 +183,45 @@
     "day": 7,
     "questions": [
       {
-        "question": "What is the name of our Sun’s outer atmosphere?",
-        "options": ["Corona", "Chromosphere", "Photosphere", "Magnetosphere"],
-        "answer": "Corona"
+        "question": "Which planetary system does Europa belong to?",
+        "options": ["Saturn", "Jupiter", "Uranus", "Neptune"],
+        "answer": "Jupiter"
       },
       {
-        "question": "Which planet has the longest day?",
-        "options": ["Mercury", "Venus", "Earth", "Neptune"],
-        "answer": "Venus"
+        "question": "What is the primary goal of NASA's Europa Clipper mission?",
+        "options": [
+          "To study the surface of Mars",
+          "To investigate the habitability of Europa",
+          "To search for new planets",
+          "To study Jupiter's atmosphere"
+        ],
+        "answer": "To investigate the habitability of Europa"
       },
       {
-        "question": "What is the approximate age of the Universe?",
-        "options": ["4.5 billion years", "13.8 billion years", "10 billion years", "15.7 billion years"],
-        "answer": "13.8 billion years"
+        "question": "What makes Europa an exciting candidate for studying extraterrestrial life?",
+        "options": [
+          "Its active volcanoes",
+          "Its subsurface ocean beneath an icy crust",
+          "Its thick atmosphere",
+          "Its magnetic field"
+        ],
+        "answer": "Its subsurface ocean beneath an icy crust"
       },
       {
-        "question": "What type of celestial object is Halley's Comet?",
-        "options": ["Asteroid", "Comet", "Meteor", "Dwarf Planet"],
-        "answer": "Comet"
+        "question": "How will Europa Clipper communicate with Earth?",
+        "options": [
+          "Through a satellite orbiting Mars",
+          "Via radio waves",
+          "Using laser-based communication",
+          "Through a relay station on the Moon"
+        ],
+        "answer": "Via radio waves"
       },
       {
-        "question": "What is the speed of light in a vacuum?",
-        "options": ["300,000 km/s", "150,000 km/s", "1,000,000 km/s", "500,000 km/s"],
-        "answer": "300,000 km/s"
-      }
+        "question": "When will NASA's Europa Clipper spacecraft reach Jupiter?",
+        "options": ["2025", "2030", "2034", "2050"],
+        "answer": "2030"
+      }      
     ]
   }
 ]

@@ -21,10 +21,10 @@ const HomeLayout = () => {
             <Component2 />
           </div>
           <div className="flex justify-center w-full">
-            <DailyQuiz />
+            <Rover />
           </div>
           <div className="flex justify-center w-full">
-            <Rover />
+            <DailyQuiz />
           </div>
         </div>
       </main>

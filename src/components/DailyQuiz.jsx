@@ -50,7 +50,7 @@ const DailyQuiz = () => {
   const currentQuiz = quizData[quizDayIndex];
 
   return (
-    <div className="w-full px-4 py-6 bg-gray-200 rounded-lg">
+    <div className="w-full max-w-7xl px-4 py-6 bg-gray-800 rounded-3xl shadow-lg">
       <h2 className="text-2xl font-bold mb-4">Daily Quiz - Day {quizDayIndex + 1}</h2>
       {showResults ? (
         <div>

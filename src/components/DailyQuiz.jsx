@@ -56,6 +56,17 @@ const DailyQuiz = () => {
     setQuizCompleted(false);
   };
 
+  const handleNextQuiz = () => {
+    const nextQuizIndex = (quizDayIndex + 1) % quizData.length;
+    setQuizDayIndex(nextQuizIndex);
+    setCurrentQuestionIndex(0);
+    setScore(0);
+    setShowAnswer(false);
+    setSelectedAnswer(null);
+    setProgress(0);
+    setQuizCompleted(false);
+  };
+
   return (
     <div className="w-full max-w-7xl px-4 py-6 bg-gray-800 rounded-3xl shadow-lg">
       <h2 className="text-2xl text-center font-bold mb-4">Daily Quiz - Day {quizDayIndex + 1}</h2>
@@ -71,12 +82,20 @@ const DailyQuiz = () => {
           <p className="text-xl text-center font-bold mb-4">
             Quiz completed! Your score is {score}/{currentQuiz.questions.length}.
           </p>
-          <button
-            onClick={handleRetryQuiz}
-            className="mt-4 px-4 py-2 bg-cyan-500 text-white rounded hover:bg-cyan-600"
-          >
-            Retry Quiz
-          </button>
+          <div className="flex gap-4">
+            <button
+              onClick={handleRetryQuiz}
+              className="px-4 py-2 bg-cyan-500 text-white rounded hover:bg-cyan-600"
+            >
+              Retry Quiz
+            </button>
+            <button
+              onClick={handleNextQuiz}
+              className="px-4 py-2 bg-cyan-500 text-white rounded hover:bg-cyan-600"
+            >
+              Next Quiz
+            </button>
+          </div>
         </div>
       ) : (
         <div className="flex flex-col items-center">

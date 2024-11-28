@@ -9,6 +9,7 @@ const DailyQuiz = () => {
   const [showAnswer, setShowAnswer] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [progress, setProgress] = useState(0);
+  const [quizCompleted, setQuizCompleted] = useState(false);
 
   // Unlocks quizzes based on the system's current date
   useEffect(() => {
@@ -42,8 +43,17 @@ const DailyQuiz = () => {
       setProgress(((currentQuestionIndex + 1) / currentQuiz.questions.length) * 100);
     } else {
       setProgress(100);
-      alert(`Quiz completed! Your score is ${score}/${currentQuiz.questions.length}`);
+      setQuizCompleted(true);
     }
+  };
+
+  const handleRetryQuiz = () => {
+    setCurrentQuestionIndex(0);
+    setScore(0);
+    setShowAnswer(false);
+    setSelectedAnswer(null);
+    setProgress(0);
+    setQuizCompleted(false);
   };
 
   return (
@@ -55,37 +65,52 @@ const DailyQuiz = () => {
           style={{ width: `${progress}%` }}
         ></div>
       </div>
-      <div>
-        <p className="font-semibold mb-4">{currentQuestion.question}</p>
-        {currentQuestion.options.map((option, index) => (
+
+      {quizCompleted ? (
+        <div>
+          <p className="text-xl font-bold mb-4">
+            Quiz completed! Your score is {score}/{currentQuiz.questions.length}.
+          </p>
           <button
-            key={index}
-            onClick={() => handleAnswer(option, currentQuestion.answer)}
-            className={`block w-full py-2 px-4 rounded mb-2 ${
-              showAnswer
-                ? option === currentQuestion.answer
-                  ? "bg-green-500 text-white"
-                  : option === selectedAnswer
-                  ? "bg-red-500 text-white"
-                  : "bg-gray-300"
-                : "bg-gray-300 hover:bg-gray-400"
-            }`}
-            disabled={showAnswer}
+            onClick={handleRetryQuiz}
+            className="mt-4 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
           >
-            {option}
+            Retry Quiz
           </button>
-        ))}
-        {showAnswer && (
-          <button
-            onClick={handleNextQuestion}
-            className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-          >
-            {currentQuestionIndex < currentQuiz.questions.length - 1
-              ? "Next Question"
-              : "Finish Quiz"}
-          </button>
-        )}
-      </div>
+        </div>
+      ) : (
+        <div>
+          <p className="font-semibold mb-4">{currentQuestion.question}</p>
+          {currentQuestion.options.map((option, index) => (
+            <button
+              key={index}
+              onClick={() => handleAnswer(option, currentQuestion.answer)}
+              className={`block w-full py-2 px-4 rounded mb-2 ${
+                showAnswer
+                  ? option === currentQuestion.answer
+                    ? "bg-green-500 text-white"
+                    : option === selectedAnswer
+                    ? "bg-red-500 text-white"
+                    : "bg-gray-300"
+                  : "bg-gray-300 hover:bg-gray-400"
+              }`}
+              disabled={showAnswer}
+            >
+              {option}
+            </button>
+          ))}
+          {showAnswer && (
+            <button
+              onClick={handleNextQuestion}
+              className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+            >
+              {currentQuestionIndex < currentQuiz.questions.length - 1
+                ? "Next Question"
+                : "Finish Quiz"}
+            </button>
+          )}
+        </div>
+      )}
     </div>
   );
 };

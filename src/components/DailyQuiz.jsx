@@ -58,28 +58,28 @@ const DailyQuiz = () => {
 
   return (
     <div className="w-full max-w-7xl px-4 py-6 bg-gray-800 rounded-3xl shadow-lg">
-      <h2 className="text-2xl font-bold mb-4">Daily Quiz - Day {quizDayIndex + 1}</h2>
+      <h2 className="text-2xl text-center font-bold mb-4">Daily Quiz - Day {quizDayIndex + 1}</h2>
       <div className="w-full h-4 bg-gray-300 rounded-full overflow-hidden mb-4">
         <div
-          className="h-full bg-blue-500"
+          className="h-full bg-cyan-500"
           style={{ width: `${progress}%` }}
         ></div>
       </div>
 
       {quizCompleted ? (
-        <div>
-          <p className="text-xl font-bold mb-4">
+        <div className="flex flex-col items-center">
+          <p className="text-xl text-center font-bold mb-4">
             Quiz completed! Your score is {score}/{currentQuiz.questions.length}.
           </p>
           <button
             onClick={handleRetryQuiz}
-            className="mt-4 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
+            className="mt-4 px-4 py-2 bg-cyan-500 text-white rounded hover:bg-cyan-600"
           >
             Retry Quiz
           </button>
         </div>
       ) : (
-        <div>
+        <div className="flex flex-col items-center">
           <p className="font-semibold mb-4">{currentQuestion.question}</p>
           {currentQuestion.options.map((option, index) => (
             <button
@@ -102,7 +102,7 @@ const DailyQuiz = () => {
           {showAnswer && (
             <button
               onClick={handleNextQuestion}
-              className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+              className="mt-4 px-4 py-2 bg-cyan-500 text-white rounded hover:bg-cyan-600"
             >
               {currentQuestionIndex < currentQuiz.questions.length - 1
                 ? "Next Question"

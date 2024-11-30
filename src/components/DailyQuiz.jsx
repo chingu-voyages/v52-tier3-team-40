@@ -72,7 +72,7 @@ const DailyQuiz = () => {
       <h2 className="text-2xl text-center font-bold mb-4">Daily Quiz - Day {quizDayIndex + 1}</h2>
       <div className="w-full h-3 bg-gray-300 rounded-full overflow-hidden mb-4">
         <div
-          className="h-full bg-cyan-500"
+          className="h-full bg-teal-500"
           style={{ width: `${progress}%` }}
         ></div>
       </div>
@@ -85,13 +85,13 @@ const DailyQuiz = () => {
           <div className="flex gap-4">
             <button
               onClick={handleRetryQuiz}
-              className="px-4 py-2 bg-cyan-500 text-white rounded hover:bg-cyan-600"
+              className="px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-600"
             >
               Retry Quiz
             </button>
             <button
               onClick={handleNextQuiz}
-              className="px-4 py-2 bg-cyan-500 text-white rounded hover:bg-cyan-600"
+              className="px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-600"
             >
               Next Quiz
             </button>
@@ -121,7 +121,7 @@ const DailyQuiz = () => {
           {showAnswer && (
             <button
               onClick={handleNextQuestion}
-              className="mt-4 px-4 py-2 bg-cyan-500 text-white rounded hover:bg-cyan-600"
+              className="mt-4 px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-600"
             >
               {currentQuestionIndex < currentQuiz.questions.length - 1
                 ? "Next Question"

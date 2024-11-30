@@ -18,10 +18,10 @@ const Rover = () => {
         <p className='py-2'>Mars rovers are robotic vehicles designed to explore the surface of Mars. They capture high-resolution images, analyze soil and rock samples, and collect data to study the planet's geology, climate, and potential for past or present life.</p>
         <p className='pb-2 italic'>Click to learn more about a specific rover and view the images it had captured of Mars.</p>
       </div>
-      <div className='flex'>
-        <div className="flex flex-col">
+      <div className='flex flex-col sm:flex-row mt-4'>
+        <div className="flex flex-row sm:flex-col">
           <button 
-            className="bg-teal-200 hover:bg-teal-500 text-slate-600 font-bold py-2 px-4 border-y-2 border-y-gray-900 rounded-l-lg -mt-0.5"
+            className={`${selectedRover === "perseverance" ? "bg-cyan-700" : "bg-teal-200 hover:bg-teal-500 text-slate-600"} sm:text-xl font-bold py-2 px-2 sm:px-4 border-2 border-gray-900 border-b-0 sm:border-0 sm:border-b-4 rounded-t-lg sm:rounded-l-lg sm:rounded-tr-none -ml-0.5`}
             onClick={()=>{
               setSelectedRover("perseverance")
             }}
@@ -29,7 +29,7 @@ const Rover = () => {
             Perseverance
           </button>
           <button 
-            className="bg-teal-200 hover:bg-teal-500 text-slate-600 font-bold py-2 px-4 border-y-2 border-y-gray-900 rounded-l-lg"
+            className={`${selectedRover === "curiosity" ? "bg-cyan-700" : "bg-teal-200 hover:bg-teal-500 text-slate-600"} sm:text-xl font-bold py-2 px-2 sm:px-4 border-2 border-gray-900 border-b-0 sm:border-0 sm:border-b-4 rounded-t-lg sm:rounded-l-lg sm:rounded-tr-none`}
             onClick={()=>{
               setSelectedRover("curiosity")
             }}
@@ -37,7 +37,7 @@ const Rover = () => {
             Curiosity
           </button>
           <button 
-            className="bg-teal-200 hover:bg-teal-500 text-slate-600 font-bold py-2 px-4 border-y-2 border-y-gray-900 rounded-l-lg"
+            className={`${selectedRover === "opportunity" ? "bg-cyan-700" : "bg-teal-200 hover:bg-teal-500 text-slate-600"} sm:text-xl font-bold py-2 px-2 sm:px-4 border-2 border-gray-900 border-b-0 sm:border-0 sm:border-b-4 rounded-t-lg sm:rounded-l-lg sm:rounded-tr-none`}
             onClick={()=>{
               setSelectedRover("opportunity")
             }}
@@ -45,7 +45,7 @@ const Rover = () => {
             Opportunity
           </button>
           <button 
-            className="bg-teal-200 hover:bg-teal-500 text-slate-600 font-bold py-2 px-4 border-y-2 border-y-gray-900 rounded-l-lg"
+            className={`${selectedRover === "spirit" ? "bg-cyan-700" : "bg-teal-200 hover:bg-teal-500 text-slate-600"} sm:text-xl font-bold py-2 px-2 sm:px-4 border-2 border-gray-900 border-b-0 sm:border-0 sm:border-b-4 rounded-t-lg sm:rounded-l-lg sm:rounded-tr-none`}
             onClick={()=>{
               setSelectedRover("spirit")
             }}

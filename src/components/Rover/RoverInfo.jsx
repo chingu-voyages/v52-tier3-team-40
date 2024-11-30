@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import roverImages from '../../assets/rover/images'
 import RoverPhotosDisplay from './RoverPhotosDisplay'
 import { fetchPhotosForLast5Sols } from './RoverHelper'
 
@@ -55,15 +56,20 @@ const RoverInfo = ({selectedRover}) => {
 
 
   return (
-    <div className="bg-blue-200 w-full min-h-64 max-h-max">
+    <div className="bg-cyan-700 w-full min-h-64 max-h-max px-8 py-4 rounded-tr-lg">
       {!roverInfo ? 
 				<p className="font-bold text-xl">Loading...</p> 
 				: 
 				<div>
-					<div className="px-4 sm:px-0">
+					<div className="bg-gray-400">
     				<h3 className="text-base/7 font-semibold text-gray-100">Rover Information</h3>
     				<p className="mt-1 max-w-2xl text-sm/6 text-gray-100">Status: {roverInfo.status}</p>
   				</div>
+          <img
+            src={roverImages[selectedRover]}
+            alt="Rover"
+            class="w-1/3 object-cover"
+          />
   				<div className="mt-6 border-t border-gray-100">
     				<dl className="divide-y divide-gray-100">
       				<div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
@@ -124,6 +130,29 @@ const RoverInfo = ({selectedRover}) => {
   				</div>
 				</div>
 			}
+      {/* <div class="flex max-w-2xl bg-gray-50 border border-gray-200 rounded-lg shadow-md overflow-hidden">
+  <img
+    src="rover-image.jpg"
+    alt="Rover"
+    class="w-1/3 object-cover"
+  />
+  <div class="p-4 w-2/3">
+    <h2 class="text-xl font-bold text-gray-800">Rover Name: Curiosity</h2>
+    <p class="text-gray-600 text-sm mt-2">
+      Launched: November 26, 2011<br />
+      Mission: Explore Gale Crater on Mars.
+    </p>
+    <p class="text-gray-700 mt-3">
+      Curiosity is equipped with a drill, cameras, and sensors to analyze soil and rocks.
+    </p>
+    <a
+      href="#"
+      class="text-teal-500 font-semibold mt-4 inline-block hover:underline"
+    >
+      Read More →
+    </a>
+  </div>
+</div> */}
     </div>
   )
 }

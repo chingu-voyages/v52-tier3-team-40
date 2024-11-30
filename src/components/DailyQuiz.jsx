@@ -19,7 +19,7 @@ const DailyQuiz = () => {
     if (lastCompletedDate !== today) {
       const nextDay = currentDay + 1;
       setCurrentDay(nextDay < quizData.length ? nextDay : currentDay);
-      setQuizDayIndex(nextDay - 1); // Set the active quiz to the latest unlocked day
+      setQuizDayIndex(nextDay < quizData.length ? nextDay - 1 : quizDayIndex); // Set the active quiz to the latest unlocked day
       localStorage.setItem("quizLastCompletedDate", today);
     }
   }, [currentDay]);

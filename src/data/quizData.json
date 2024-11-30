@@ -45,7 +45,7 @@
       {
         "question": "What is the term for a star that has collapsed under gravity?",
         "options": ["Red Giant", "Black Hole", "White Dwarf", "Neutron Star"],
-        "answer": "Black Hole"
+        "answer": "Neutron Star"
       },
       {
         "question": "Which planet has the Great Red Spot?",
@@ -53,24 +53,24 @@
         "answer": "Jupiter"
       },
       {
-        "question": "What protects Earth from harmful solar radiation?",
-        "options": ["Magnetosphere", "Stratosphere", "Troposphere", "Ozone Layer"],
-        "answer": "Magnetosphere"
-      }
+        "question": "What is the primary gas found in Earth's atmosphere?",
+        "options": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Argon"],
+        "answer": "Nitrogen"
+      }      
     ]
   },
   {
     "day": 3,
     "questions": [
       {
-        "question": "What is the brightest object in the night sky?",
-        "options": ["Polaris", "Venus", "Sirius", "Betelgeuse"],
-        "answer": "Venus"
+        "question": "What is the brightest star in the night sky?",
+        "options": ["Polaris", "Vega", "Sirius", "Betelgeuse"],
+        "answer": "Sirius"
       },
       {
-        "question": "What are Saturn's rings primarily made of?",
-        "options": ["Dust and Gas", "Ice and Rock", "Metal and Stone", "Water Vapor"],
-        "answer": "Ice and Rock"
+        "question": "Which planet is known for its prominent ring system?",
+        "options": ["Saturn", "Jupiter", "Uranus", "Neptune"],
+        "answer": "Saturn"
       },
       {
         "question": "What is the term for the boundary of a black hole?",
@@ -84,8 +84,8 @@
       },
       {
         "question": "What do we call the birth of a star?",
-        "options": ["Supernova", "Protostar Formation", "Nebula Collapse", "White Dwarf Creation"],
-        "answer": "Protostar Formation"
+        "options": ["Supernova", "Star Formation", "Nebula Collapse", "White Dwarf Creation"],
+        "answer": "Star Formation"
       }
     ]
   },
@@ -98,9 +98,9 @@
         "answer": "Sputnik 1"
       },
       {
-        "question": "Which planet is known for its prominent ring system?",
-        "options": ["Saturn", "Jupiter", "Uranus", "Neptune"],
-        "answer": "Saturn"
+        "question": "What are Saturn's rings primarily NOT made of?",
+        "options": ["Gas", "Ice", "Rocks", "Vapor"],
+        "answer": "Vapor"
       },
       {
         "question": "What is the term for a rock that enters Earth's atmosphere and burns up?",
@@ -114,7 +114,7 @@
       },
       {
         "question": "What type of galaxy is the Milky Way?",
-        "options": ["Elliptical", "Spiral", "Irregular", "Lenticular"],
+        "options": ["Elliptical", "Spiral", "Irregular", "Peculiar"],
         "answer": "Spiral"
       }
     ]
@@ -124,8 +124,8 @@
     "questions": [
       {
         "question": "What is the smallest type of star?",
-        "options": ["Red Dwarf", "White Dwarf", "Brown Dwarf", "Neutron Star"],
-        "answer": "White Dwarf"
+        "options": ["Red Dwarfs", "White Dwarfs", "Brown Dwarfs", "Neutron Stars"],
+        "answer": "Red Dwarfs"
       },
       {
         "question": "What is the name of NASA's most famous space telescope?",

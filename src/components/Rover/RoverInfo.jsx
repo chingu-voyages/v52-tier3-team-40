@@ -55,7 +55,7 @@ const RoverInfo = ({selectedRover}) => {
 
 
   return (
-    <>
+    <div className="bg-blue-200 w-full min-h-64 max-h-max">
       {!roverInfo ? 
 				<p className="font-bold text-xl">Loading...</p> 
 				: 
@@ -124,7 +124,7 @@ const RoverInfo = ({selectedRover}) => {
   				</div>
 				</div>
 			}
-    </>
+    </div>
   )
 }
 

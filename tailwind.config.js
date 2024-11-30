@@ -28,6 +28,6 @@ export default {
   },
   darkMode: "class",
   plugins: [
-    require('tailwind-scrollbar-hide')
+    require("tailwind-scrollbar-hide")
   ],
 };

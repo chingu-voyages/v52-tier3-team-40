@@ -5,10 +5,10 @@ export default {
     fontFamily: {
       sans: ["ui-sans-serif", "system-ui"],
       serif: ["ui-serif", "Georgia"],
-      mono: ["ui-monospace", "SFMono-Regular"],
+      mono: ["monospace", "SFMono-Regular"],
       display: ["Oswald"],
-      body: ["Blinker"],
-      bold: ["BlinkerBold"],
+      body: ["monospace"],
+      bold: ["monospace"],
       blinker: ["BlinkerBold"]
     },
     extend: {

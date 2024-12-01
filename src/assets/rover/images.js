@@ -1,5 +1,5 @@
 import spirit from "./spirit.jpg"
-import perseverance from "./perseverance.webp"
+import perseverance from "./perseverance.jpg"
 import curiosity from "./curiosity.webp"
 import opportunity from "./opportunity.jpg"
 

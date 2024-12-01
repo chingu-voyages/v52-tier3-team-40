@@ -14,9 +14,9 @@ const Rover = () => {
         </p>
       </div>
 
-      <div className='container mx-auto px-4 md:px-32 xl:px-64'>
+      <div className='container mx-auto px-4 md:px-24 xl:px-64'>
         <p className='py-2'>Mars rovers are robotic vehicles designed to explore the surface of Mars. They capture high-resolution images, analyze soil and rock samples, and collect data to study the planet's geology, climate, and potential for past or present life.</p>
-        <p className='pb-2 italic'>Click to learn more about a specific rover and view the images it had captured of Mars.</p>
+        <p className='py-3 italic'>Click to learn more about a specific rover and view the images it had captured of Mars.</p>
       </div>
       <div className='flex flex-col sm:flex-row mt-4'>
         <div className="flex flex-row sm:flex-col">

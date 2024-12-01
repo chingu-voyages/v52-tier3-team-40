@@ -3,6 +3,7 @@ import PotdComponent from "../components/PotdComponent";
 import Component2 from "../components/Component2";
 import Footer from "../components/Footer/Footer";
 import Rover from "../components/Rover/Rover";
+import DailyQuiz from "../components/DailyQuiz";
 
 const HomeLayout = () => {
   return (
@@ -21,6 +22,9 @@ const HomeLayout = () => {
           </div>
           <div className="flex justify-center w-full">
             <Rover />
+          </div>
+          <div className="flex justify-center w-full">
+            <DailyQuiz />
           </div>
         </div>
       </main>

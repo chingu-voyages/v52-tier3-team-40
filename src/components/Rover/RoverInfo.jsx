@@ -55,7 +55,7 @@ const RoverInfo = ({selectedRover}) => {
 
 
 	return (
-		<div className="bg-cyan-700 w-full min-h-64 max-h-max px-8 py-4 rounded-tr-lg rounded-b-lg">
+		<div className="bg-cyan-700 w-full min-h-64 max-h-min px-8 py-4 rounded-tr-lg rounded-b-lg">
 			{!roverInfo ? 
 				<p className="font-bold text-xl">Loading...</p> 
 					: 
@@ -109,13 +109,13 @@ const RoverInfo = ({selectedRover}) => {
 					</div>
 
 					<div className="p-2 sm:grid sm:grid-cols-7 sm:px-0">
-						<dt className="font-black text-base text-gray-100">Cameras 
+						<p className="font-black text-base text-gray-100">Cameras 
 							<span className='text-xs inline-block font-thin italic'>Choose a camera to view the photos captured by the rover.</span>
-						</dt>
-						<dd className="mt-1 text-sm/6 text-gray-100 sm:mt-0 sm:col-span-6">
+						</p>
+						<div className="mt-1 text-sm/6 text-gray-100 sm:mt-0 sm:col-span-6">
 							{roverInfo.cameras.map((camera)=>
 								<button 
-									className={`font-bold py-2 rounded-md m-1 px-4 ${
+									className={`font-bold p-1 sm:py-2 rounded-md m-1 sm:px-3 ${
 										isSpiritOrOpportunity 
 											? "text-slate-600 cursor-not-allowed" 
 											: "hover:bg-teal-500 text-slate-600"
@@ -133,7 +133,7 @@ const RoverInfo = ({selectedRover}) => {
 								</button>
 							)}
 							{isSpiritOrOpportunity && <p className='text-lg text-bold text-red-300'>Sorry, images from Spirit and Opportunity can not be fetched.</p>}
-						</dd>
+						</div>
 					</div>
 										
 					{selectedCamera && (
@@ -143,8 +143,8 @@ const RoverInfo = ({selectedRover}) => {
 								camera={selectedCamera}
 							/>
 						:
-							<p className="font-bold text-xl">Loading...</p> 
-						)}
+						<p className="font-bold text-xl">Loading...</p> 
+					)}
 				</div>
 			}
 		</div>

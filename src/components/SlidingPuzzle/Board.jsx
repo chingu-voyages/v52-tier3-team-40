@@ -1,23 +1,36 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Tile from "./Tile";
 import { TILE_COUNT, GRID_SIZE, BOARD_SIZE } from "./constants";
-import { shuffle, swap, isSolved, canSwap } from "./helpers";
+import { canSwap, shuffle, swap, isSolved } from "./helpers";
 
-const Board = ({ isStarted }) => {
+const Board = ({ }) => {
   const [tiles, setTiles] = useState([...Array(TILE_COUNT).keys()]);
+  const [isStarted, setIsStarted] = useState(false);
 
-  // Shuffle tiles when the game starts
-  useEffect(() => {
-    if (!isStarted) {
-      setTiles(shuffle([...Array(TILE_COUNT).keys()]));
+  const shuffleTiles = () => {
+    const shuffleTiles = shuffle(tiles)
+    setTiles(shuffleTiles);
+  }
+
+  const swapTiles = (tileIndex) => {
+    if (canSwap(tileIndex, tiles.indexOf(tiles.length - 1))) {
+      const swappedTiles = swap(tiles, tileIndex, tiles.indexOf(tiles.length - 1))
+      setTiles(swappedTiles);
     }
-  }, [isStarted]);
+  }
 
   const handleTileClick = (index) => {
-    if (canSwap(index, tiles.indexOf(tiles.length - 1))) {
-      setTiles(swap(tiles, index, tiles.indexOf(tiles.length - 1)));
-    }
-  };
+    swapTiles(index);
+  }
+
+  const handleShuffleClick = () => {{
+    shuffleTiles();
+  }}
+
+  const handleStartClick = () => {
+    shuffleTiles();
+    setIsStarted(true);
+  }
 
   const hasWon = isSolved(tiles);
   const pieceSize = BOARD_SIZE / GRID_SIZE;
@@ -43,6 +56,23 @@ const Board = ({ isStarted }) => {
         ))}
       </ul>
       {hasWon && isStarted && <p className="mt-4 text-green-600 font-semibold">Congrats! Puzzle Solved 🎉</p>}
+      <div className="flex justify-center mt-10">
+        {!isStarted ? (
+          <button
+            className="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700"
+            onClick={() => handleStartClick()}
+          >
+            Start Game
+          </button>
+        ) : (
+          <button
+            className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+            onClick={() => handleShuffleClick()}
+          >
+            Restart Game
+          </button>
+        )}
+      </div>
     </div>
   );
 };

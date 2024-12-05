@@ -14,7 +14,7 @@ const HomeLayout = () => {
       <main className="w-full">
         <div className="w-full px-4 py-10 space-y-8">
           <div className="flex justify-center w-full">
-            <PotdComponent/>
+            <PotdComponent />
           </div>
           <div className="flex justify-center w-full">
             <Component2 />
@@ -25,7 +25,7 @@ const HomeLayout = () => {
         </div>
       </main>
 
-      <div className="w-full h-[60vh]">
+      <div className="w-full ">
         <Footer />
       </div>
     </div>

@@ -62,14 +62,14 @@ const Board = ({ imgUrl }) => {
       <div className="flex justify-center mt-10">
         {!isStarted ? (
           <button
-            className="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700"
+            className="border-slate-600 border-2 px-5 py-2 w-max self-center hover:border-teal-400"
             onClick={() => handleStartClick()}
           >
             Start Game
           </button>
         ) : (
           <button
-            className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+            className="border-slate-600 border-2 px-5 py-2 w-max self-center hover:border-teal-400"
             onClick={() => handleShuffleClick()}
           >
             Restart Game

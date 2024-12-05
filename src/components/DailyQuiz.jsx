@@ -69,7 +69,7 @@ const DailyQuiz = () => {
 
   return (
     <div className="w-full max-w-7xl px-4 py-6 bg-gray-800 rounded-3xl shadow-lg">
-      <h2 className="text-2xl text-center font-bold mb-4">Daily Quiz - Day {quizDayIndex + 1}</h2>
+      <h2 className="text-3xl text-center font-bold mb-4">Daily Quiz - Day {quizDayIndex + 1}</h2>
       <div className="w-full h-3 bg-gray-300 rounded-full overflow-hidden mb-4">
         <div
           className="h-full bg-teal-500"

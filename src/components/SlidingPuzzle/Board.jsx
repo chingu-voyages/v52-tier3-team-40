@@ -58,7 +58,7 @@ const Board = ({ imgUrl }) => {
           />
         ))}
       </ul>
-      {hasWon && isStarted && <p className="mt-4 text-green-600 font-semibold">Congrats! Puzzle Solved 🎉</p>}
+      {hasWon && isStarted && <p className="mt-4 text-teal-400 font-bold text-2xl">Congrats! Puzzle Solved 🎉</p>}
       <div className="flex justify-center mt-10">
         {!isStarted ? (
           <button

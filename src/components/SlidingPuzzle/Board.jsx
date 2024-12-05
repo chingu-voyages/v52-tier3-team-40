@@ -3,7 +3,7 @@ import Tile from "./Tile";
 import { TILE_COUNT, GRID_SIZE, BOARD_SIZE } from "./constants";
 import { canSwap, shuffle, swap, isSolved } from "./helpers";
 
-const Board = ({ }) => {
+const Board = ({ imgUrl }) => {
   const [tiles, setTiles] = useState([...Array(TILE_COUNT).keys()]);
   const [isStarted, setIsStarted] = useState(false);
 
@@ -51,6 +51,9 @@ const Board = ({ }) => {
             index={index}
             tile={tile}
             pieceSize={pieceSize}
+            imgUrl={imgUrl}
+            gridSize={GRID_SIZE}
+            boardSize={BOARD_SIZE}
             handleClick={handleTileClick}
           />
         ))}

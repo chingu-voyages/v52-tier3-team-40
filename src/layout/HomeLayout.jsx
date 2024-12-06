@@ -4,6 +4,7 @@ import Component2 from "../components/Component2";
 import Footer from "../components/Footer/Footer";
 import Rover from "../components/Rover/Rover";
 import DailyQuiz from "../components/DailyQuiz";
+import SlidingPuzzle from "../components/SlidingPuzzle/SlidingPuzzle";
 
 const HomeLayout = () => {
   return (
@@ -25,6 +26,9 @@ const HomeLayout = () => {
           </div>
           <div className="flex justify-center w-full">
             <DailyQuiz />
+          </div>
+          <div className="flex justify-center w-full">
+            <SlidingPuzzle />
           </div>
         </div>
       </main>

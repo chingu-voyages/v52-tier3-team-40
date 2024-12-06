@@ -71,7 +71,7 @@ const ISSMap = () => {
   }, [position]);
 
   return (
-    <div className="flex flex-col w-full max-w-7xl py-6 px-8">
+    <div className="flex flex-col w-full max-w-7xl py-6 ">
       <div className="self-center text-center">
         <h2 className="text-3xl font-bold">Live ISS Tracker</h2>
         <hr className="border-b-teal-400 border-b-2 border-t-0 w-32 mx-auto my-4"></hr>
@@ -80,14 +80,14 @@ const ISSMap = () => {
           <span>Lon: {position.lon}</span>
         </p>
         <div className="container mx-auto md:px-24 xl:px-64">
-          <p className="py-10">
+          <p className="py-4">
             The International Space Station is moving at close to 28,000 km/h so
             its location changes really fast! Where is it right now?
           </p>
         </div>
       </div>
       <div id="map" className="w-full h-[500px] rounded-lg" />
-      <div className="mx-auto pt-20 max-w-min">
+      <div className="mx-auto py-6 max-w-min">
         <button className="border-slate-600 border-2 px-5 py-2 w-max">
           Scroll next
         </button>

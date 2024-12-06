@@ -14,7 +14,7 @@ export const profiles = [
   },
 
   {
-    name: "Deepali",
+    name: "Deepali Sangole",
     role: "Web Developer",
     github: "https://github.com/ss-deep",
     linkedin: "https://www.linkedin.com/in/deepali-sangole-49b0841b/"

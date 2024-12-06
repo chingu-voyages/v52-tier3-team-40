@@ -4,7 +4,9 @@ import FooterHeader from "./FooterHeader";
 
 function Footer() {
   return (
-    <footer id="footer" className="dark:bg-black">
+    <footer
+      id="footer"
+      className="w-full bg-footerBackgroundColor text-footerTextColor dark:bg-footerBackgroundColor dark:text-footerTextColor">
       <div className="max-w-7xl mx-auto rounded-lg col-span-12 pt-10">
         <div className="w-full mx-auto px-8">
           <FooterHeader />

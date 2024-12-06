@@ -1,9 +1,9 @@
 import Header from "../components/Header";
 import PotdComponent from "../components/PotdComponent";
-import Component2 from "../components/Component2";
-import Footer from "../components/Footer/Footer";
-import Rover from "../components/Rover/Rover";
-import DailyQuiz from "../components/DailyQuiz";
+import ISSMap from '../components/ISSMap';
+import Footer from '../components/Footer/Footer';
+import Rover from '../components/Rover/Rover';
+import DailyQuiz from '../components/DailyQuiz';
 
 const HomeLayout = () => {
   return (
@@ -15,10 +15,10 @@ const HomeLayout = () => {
       <main className="w-full">
         <div className="w-full px-4 py-10 space-y-8">
           <div className="flex justify-center w-full">
-            <PotdComponent/>
+            <PotdComponent />
           </div>
           <div className="flex justify-center w-full">
-            <Component2 />
+            <ISSMap />
           </div>
           <div className="flex justify-center w-full">
             <Rover />

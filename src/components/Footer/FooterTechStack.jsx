@@ -8,9 +8,10 @@ function FooterTechStack({ techstack }) {
     e.preventDefault();
     setModalIndex(url);
   };
+
   return (
-    <div className="box2 px-4 md:px-8 w-full lg:w-1/3 border border-footerBoxColor flex flex-col items-center rounded-3xl">
-      <h2 className="text-xl font-bold my-4 text-footerProfileNameColor dark:text-white">
+    <div className="box2 px-6 py-6 md:px-8 md:py-8 w-full lg:w-2/3 border border-footerBoxColor flex flex-col items-center rounded-3xl">
+      <h2 className="text-xl font-bold mb-6 text-footerProfileNameColor dark:text-white">
         Tech Stack
       </h2>
 
@@ -19,7 +20,7 @@ function FooterTechStack({ techstack }) {
           <div
             key={index}
             className={`flex justify-center items-center px-4 ${
-              tech.name === "tailwindcss" ? "col-span-2" : ""
+              tech.name === "tailwindcss" ? "col-span-2 w-full mt-6" : ""
             }`}>
             <a
               href="#"
@@ -30,8 +31,8 @@ function FooterTechStack({ techstack }) {
                 alt={tech.name}
                 className={`object-contain ${
                   tech.name === "tailwindcss"
-                    ? "w-96 mt-10"
-                    : "w-24 xl:w-32 h-24 xl:h-32 mr-2 xl:mr-4 mt-1"
+                    ? "w-[90%] md:w-full"
+                    : "w-24 xl:w-32 h-24 xl:h-32"
                 }`}
               />
             </a>

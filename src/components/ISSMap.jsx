@@ -16,8 +16,8 @@ const ISSMap = () => {
 
     const ISSIcon = L.icon({
       iconUrl: '/src/assets/images/ISS/ISSIcon.png',
-      iconSize: [50, 30],
-      iconAnchor: [25, 15],
+      iconSize: [60, 40],
+      iconAnchor: [30, 20],
       popupAnchor: [50, 25],
       shadowUrl: '/src/assets/images/ISS/ISSIcon_shadow.png',
       shadowSize: [60, 40],
@@ -46,7 +46,7 @@ const ISSMap = () => {
 
   useEffect(() => {
     const fetchISSPosition = () => {
-      fetch('http://api.open-notify.org/iss-now.json')
+      fetch('http://api.open-notify.org/iss-now')
         .then((response) => response.json())
         .then((data) => {
           const lat = parseFloat(data.iss_position.latitude);
@@ -71,17 +71,27 @@ const ISSMap = () => {
   }, [position]);
 
   return (
-    <div className="w-full max-w-7xl px-8 py-6 bg-gray-900 rounded-3xl shadow-lg ">
-      <div className="self-center text-center pb-3">
+    <div className="flex flex-col w-full max-w-7xl py-6 px-8">
+      <div className="self-center text-center">
         <h2 className="text-3xl font-bold">Live ISS Tracker</h2>
         <hr className="border-b-teal-400 border-b-2 border-t-0 w-32 mx-auto my-4"></hr>
-        <p className="text-gray-400 pb-4">
-          Current Position:{' '}
-          <span className="font-mono">Lat: {position.lat}</span>,{' '}
-          <span className="font-mono">Lon: {position.lon}</span>
+        <p className="text-gray-400 ">
+          Current Position: <span>Lat: {position.lat}</span>,{' '}
+          <span>Lon: {position.lon}</span>
         </p>
+        <div className="container mx-auto md:px-24 xl:px-64">
+          <p className="py-10">
+            The International Space Station is moving at close to 28,000 km/h so
+            its location changes really fast! Where is it right now?
+          </p>
+        </div>
       </div>
-      <div id="map" className="w-full h-[500px] rounded-lg shadow-md" />
+      <div id="map" className="w-full h-[500px] rounded-lg" />
+      <div className="mx-auto pt-20 max-w-min">
+        <button className="border-slate-600 border-2 px-5 py-2 w-max">
+          Scroll next
+        </button>
+      </div>
     </div>
   );
 };

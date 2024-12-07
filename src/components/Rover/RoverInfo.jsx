@@ -121,7 +121,7 @@ const RoverInfo = ({selectedRover}) => {
                       : "hover:bg-teal-500 text-slate-600"
                     } ${
                     selectedCamera === camera.name 
-                      ? "bg-red-300"
+                      ? "bg-teal-500"
                       : "bg-teal-200"	
                     }`
                   } 

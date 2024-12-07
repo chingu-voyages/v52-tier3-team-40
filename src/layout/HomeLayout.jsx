@@ -1,10 +1,12 @@
 import Header from "../components/Header";
 import PotdComponent from "../components/PotdComponent";
-import Component2 from "../components/Component2";
+
+import ISSMap from '../components/ISSMap';
 import Footer from "../components/Footer/Footer";
 import Rover from "../components/Rover/Rover";
 import DailyQuiz from "../components/DailyQuiz";
 import SlidingPuzzle from "../components/SlidingPuzzle/SlidingPuzzle";
+
 
 const HomeLayout = () => {
   return (
@@ -19,7 +21,7 @@ const HomeLayout = () => {
             <PotdComponent />
           </div>
           <div className="flex justify-center w-full">
-            <Component2 />
+            <ISSMap />
           </div>
           <div className="flex justify-center w-full">
             <Rover />

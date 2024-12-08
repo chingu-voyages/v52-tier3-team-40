@@ -46,11 +46,11 @@ const ISSMap = () => {
 
   useEffect(() => {
     const fetchISSPosition = () => {
-      fetch('http://api.open-notify.org/iss-now')
+      fetch('https://api.wheretheiss.at/v1/satellites/25544')
         .then((response) => response.json())
         .then((data) => {
-          const lat = parseFloat(data.iss_position.latitude);
-          const lon = parseFloat(data.iss_position.longitude);
+          const lat = data.latitude;
+          const lon = data.longitude;
           setPosition({ lat, lon });
         })
         .catch((error) => console.error('Error fetching ISS data:', error));

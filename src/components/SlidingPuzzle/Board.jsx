@@ -6,6 +6,7 @@ import { canSwap, shuffle, swap, isSolved } from "./helpers";
 const Board = ({ imgUrl }) => {
   const [tiles, setTiles] = useState([...Array(TILE_COUNT).keys()]);
   const [isStarted, setIsStarted] = useState(false);
+  const [numOfMoves, setNumOfMoves] = useState(0)
 
   const shuffleTiles = () => {
     const shuffleTiles = shuffle(tiles)
@@ -21,6 +22,7 @@ const Board = ({ imgUrl }) => {
 
   const handleTileClick = (index) => {
     swapTiles(index);
+    setNumOfMoves((numOfMoves)=> numOfMoves + 1)
   }
 
   const handleShuffleClick = () => {{
@@ -58,22 +60,25 @@ const Board = ({ imgUrl }) => {
           />
         ))}
       </ul>
-      {hasWon && isStarted && <p className="mt-4 text-teal-400 font-bold text-2xl">Congrats! Puzzle Solved 🎉</p>}
-      <div className="flex justify-center mt-10">
+      {hasWon && isStarted && <p className="mt-4 text-teal-400 font-bold text-2xl">Congrats! Puzzle Solved 🎉 You used {numOfMoves} Moves</p>}
+      <div className="flex flex-col gap-3 justify-center">
         {!isStarted ? (
           <button
-            className="border-slate-600 border-2 px-5 py-2 w-max self-center hover:border-teal-400"
+            className="border-slate-600 border-2 px-5 py-2 mt-12 w-max self-center hover:border-teal-400"
             onClick={() => handleStartClick()}
           >
             Start Game
           </button>
         ) : (
+          <>
+          <p className="mt-6">{numOfMoves} Moves Taken</p>
           <button
             className="border-slate-600 border-2 px-5 py-2 w-max self-center hover:border-teal-400"
             onClick={() => handleShuffleClick()}
           >
             Restart Game
           </button>
+          </>
         )}
       </div>
     </div>

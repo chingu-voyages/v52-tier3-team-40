@@ -17,8 +17,8 @@ export default {
       colors: {
         footerTextColor: "#9bc25b",
 
-        footerBoxColor: "#727272",
-        footerProfileNameColor: "#000000",
+        footerBoxColor: "#C6DAF1",
+        footerProfileNameColor: "#00000",
         footerBackgroundColor: "#f9f9f9",
         footerLinkedinHoverColor: "#0072B1"
       },

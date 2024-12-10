@@ -17,12 +17,14 @@ const Board = ({ imgUrl }) => {
     if (canSwap(tileIndex, tiles.indexOf(tiles.length - 1))) {
       const swappedTiles = swap(tiles, tileIndex, tiles.indexOf(tiles.length - 1))
       setTiles(swappedTiles);
+      setNumOfMoves((numOfMoves)=> numOfMoves + 1)
     }
   }
 
   const handleTileClick = (index) => {
-    swapTiles(index);
-    setNumOfMoves((numOfMoves)=> numOfMoves + 1)
+    if (isStarted) {
+      swapTiles(index);
+    }
   }
 
   const handleShuffleClick = () => {{
@@ -74,7 +76,10 @@ const Board = ({ imgUrl }) => {
           <p className="mt-6">{numOfMoves} Moves Taken</p>
           <button
             className="border-slate-600 border-2 px-5 py-2 w-max self-center hover:border-teal-400"
-            onClick={() => handleShuffleClick()}
+            onClick={() => {
+              handleShuffleClick()
+              setNumOfMoves(0)
+            }}
           >
             Restart Game
           </button>

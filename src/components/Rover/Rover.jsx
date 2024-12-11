@@ -5,7 +5,7 @@ const Rover = () => {
   const [selectedRover, setSelectedRover] = useState("perseverance")
 
   return (
-    <div className="w-full max-w-7xl px-8 py-6 bg-gray-900 rounded-3xl shadow-lg ">
+    <div className="w-full max-w-7xl px-8 pt-10 pb-20 bg-gray-900 rounded-3xl shadow-lg ">
       <div className="self-center text-center">
         <h2 className="text-3xl font-bold">Mars Rovers</h2>
         <hr className="border-b-teal-400 border-b-2 border-t-0 w-32 mx-auto my-4"></hr>
@@ -57,9 +57,9 @@ const Rover = () => {
         <RoverInfo selectedRover={selectedRover}/>
       </div>
       
-      <div className='mx-auto pt-6 max-w-min'>
+      {/* <div className='mx-auto pt-6 max-w-min'>
         <button className="border-slate-600 border-2 px-5 py-2 w-max">Scroll next</button>
-      </div>
+      </div> */}
     </div>
   )
 }

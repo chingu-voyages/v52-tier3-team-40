@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import ISSIcon from '../assets/images/ISS/ISSIcon.png';
+import ISSIconShadow from '../assets/images/ISS/ISSIcon_shadow.png';
 const ISSMap = () => {
   const mapRef = useRef(null);
   const issMarkerRef = useRef(null);
@@ -14,17 +16,17 @@ const ISSMap = () => {
       minZoom: 1,
     }).addTo(mapRef.current);
 
-    const ISSIcon = L.icon({
-      iconUrl: '/src/assets/images/ISS/ISSIcon.png',
+    const ISSSatellite = L.icon({
+      iconUrl: ISSIcon,
       iconSize: [60, 40],
-      iconAnchor: [30, 20],
+      iconAnchor: [30, 5],
       popupAnchor: [50, 25],
-      shadowUrl: '/src/assets/images/ISS/ISSIcon_shadow.png',
-      shadowSize: [60, 40],
-      shadowAnchor: [30, 15],
+      shadowUrl: ISSIconShadow,
+      shadowSize: [70, 50],
+      shadowAnchor: [35, 5],
     });
 
-    issMarkerRef.current = L.marker([0, 0], { icon: ISSIcon }).addTo(
+    issMarkerRef.current = L.marker([0, 0], { icon: ISSSatellite }).addTo(
       mapRef.current
     );
 

@@ -71,7 +71,7 @@ const ISSMap = () => {
   }, [position]);
 
   return (
-    <div className="flex flex-col w-full max-w-7xl px-8 pt-10 pb-20 bg-gray-900 rounded-3xl shadow-lg">
+    <div className="flex flex-col w-full max-w-7xl px-2 sm:px-8 pt-10 pb-20 bg-gray-900 rounded-3xl shadow-lg">
       <div className="self-center text-center">
         <h2 className="text-3xl font-bold">Live ISS Tracker</h2>
         <hr className="border-b-teal-400 border-b-2 border-t-0 w-32 mx-auto my-4"></hr>

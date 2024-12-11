@@ -6,8 +6,8 @@ const Tile =  ({ tile, index, tileSize, handleClick }) => {
   const { row, col } = getMatrixPosition(index, 4);
   const { x, y } = getVisualPosition(row, col, tileSize);
 
-  const imgUrl = 'https://images.unsplash.com/photo-1515705576963-95cad62945b6?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
-
+  // const imgUrl = 'https://images.unsplash.com/photo-1515705576963-95cad62945b6?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+  const imgUrl = "/src/assets/images/puzzle/square.jpg"
 
   const style = {
     width: `${tileSize}px`,
@@ -21,7 +21,7 @@ const Tile =  ({ tile, index, tileSize, handleClick }) => {
 
   return (
     <li 
-      className="flex items-center justify-center text-white cursor-pointer text-lg"
+      className="flex items-center justify-center text-white shadow-sm shadow-white cursor-pointer text-lg"
       style={style}
       onClick={() => handleClick(index)}
     >

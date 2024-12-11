@@ -68,13 +68,23 @@ const DailyQuiz = () => {
   };
 
   return (
-    <div className="w-full max-w-7xl px-4 py-6 bg-gray-800 rounded-3xl shadow-lg">
-      <h2 className="text-3xl text-center font-bold mb-4">Daily Quiz - Day {quizDayIndex + 1}</h2>
-      <div className="w-full h-3 bg-gray-300 rounded-full overflow-hidden mb-4">
-        <div
-          className="h-full bg-teal-500"
-          style={{ width: `${progress}%` }}
-        ></div>
+    <div className="flex flex-col w-full max-w-7xl px-8 pt-10 pb-20 bg-gray-900 rounded-3xl shadow-lg">
+      <div className="self-center text-center pb-6">
+        <h2 className="text-3xl font-bold">Daily Quiz - Day {quizDayIndex + 1}</h2>
+        <hr className="border-b-teal-400 border-b-2 border-t-0 w-32 mx-auto my-4"></hr>
+        <p className="text-gray-400 uppercase ">
+          Test your space knowledge with our daily quiz
+        </p>
+      </div>
+
+      <div className="container mx-auto md:px-24 xl:px-64 pb-4">
+        <h2>Progress: {progress}%</h2>
+        <div className="w-full h-3 bg-gray-300 rounded-full overflow-hidden mb-4">
+          <div
+            className="h-full bg-teal-500"
+            style={{ width: `${progress}%` }}
+          ></div>
+        </div>
       </div>
 
       {quizCompleted ? (
@@ -99,19 +109,19 @@ const DailyQuiz = () => {
         </div>
       ) : (
         <div className="flex flex-col items-center">
-          <p className="font-semibold mb-4">{currentQuestion.question}</p>
+          <p className="font-semibold mb-4 text-xl">{currentQuestion.question}</p>
           {currentQuestion.options.map((option, index) => (
             <button
               key={index}
               onClick={() => handleAnswer(option, currentQuestion.answer)}
-              className={`block w-full py-2 px-4 rounded mb-2 ${
+              className={`block w-3/4 py-2 px-4 rounded mb-2 ${
                 showAnswer
                   ? option === currentQuestion.answer
                     ? "bg-green-500 text-white"
                     : option === selectedAnswer
                     ? "bg-red-500 text-white"
-                    : "bg-gray-300"
-                  : "bg-gray-300 hover:bg-gray-400"
+                    : "bg-gray-400"
+                  : "bg-gray-400 hover:bg-gray-500"
               }`}
               disabled={showAnswer}
             >

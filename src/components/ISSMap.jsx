@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import ISSIcon from '../assets/images/ISS/ISSIcon.png';
+import ISSIconShadow from '../assets/images/ISS/ISSIcon_shadow.png';
 const ISSMap = () => {
   const mapRef = useRef(null);
   const issMarkerRef = useRef(null);
@@ -14,17 +16,17 @@ const ISSMap = () => {
       minZoom: 1,
     }).addTo(mapRef.current);
 
-    const ISSIcon = L.icon({
-      iconUrl: '/src/assets/images/ISS/ISSIcon.png',
+    const ISSSatellite = L.icon({
+      iconUrl: ISSIcon,
       iconSize: [60, 40],
-      iconAnchor: [30, 20],
+      iconAnchor: [30, 5],
       popupAnchor: [50, 25],
-      shadowUrl: '/src/assets/images/ISS/ISSIcon_shadow.png',
-      shadowSize: [60, 40],
-      shadowAnchor: [30, 15],
+      shadowUrl: ISSIconShadow,
+      shadowSize: [70, 50],
+      shadowAnchor: [35, 5],
     });
 
-    issMarkerRef.current = L.marker([0, 0], { icon: ISSIcon }).addTo(
+    issMarkerRef.current = L.marker([0, 0], { icon: ISSSatellite }).addTo(
       mapRef.current
     );
 
@@ -71,11 +73,11 @@ const ISSMap = () => {
   }, [position]);
 
   return (
-    <div className="flex flex-col w-full max-w-7xl py-6 ">
+    <div className="flex flex-col w-full max-w-7xl px-8 pt-10 pb-20 bg-gray-900 rounded-3xl shadow-lg">
       <div className="self-center text-center">
         <h2 className="text-3xl font-bold">Live ISS Tracker</h2>
         <hr className="border-b-teal-400 border-b-2 border-t-0 w-32 mx-auto my-4"></hr>
-        <p className="text-gray-400 ">
+        <p className="text-gray-400 uppercase ">
           Current Position: <span>Lat: {position.lat}</span>,{' '}
           <span>Lon: {position.lon}</span>
         </p>
@@ -87,11 +89,12 @@ const ISSMap = () => {
         </div>
       </div>
       <div id="map" className="w-full h-[500px] rounded-lg" />
-      <div className="mx-auto py-6 max-w-min">
+
+      {/* <div className="mx-auto py-6 max-w-min">
         <button className="border-slate-600 border-2 px-5 py-2 w-max">
           Scroll next
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };

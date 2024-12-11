@@ -17,7 +17,7 @@ function FooterUserProfiles({ profiles }) {
           key={index}
           className="profile-info flex justify-between items-center mb-4">
           <div className="firstNameContainer">
-            <h2 className="text-2xl text-footerProfileNameColor dark:text-white">
+            <h2 className="text-2xl text-gray-300 dark:text-white">
               {profile.name}
             </h2>
             <p className="text-sm text-footerBoxColor">{profile.role}</p>
@@ -33,7 +33,7 @@ function FooterUserProfiles({ profiles }) {
               href="#"
               onClick={e => handleClick(e, profile.github)}
               className="group">
-              <i className="fab fa-github text-4xl mr-2 h-8 group-hover:text-footerProfileNameColor" />
+              <i className="fab fa-github text-4xl mr-2 h-8 group-hover:text-gray-600" />
             </a>
           </div>
         </div>

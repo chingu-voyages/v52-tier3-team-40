@@ -1,12 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Tile from "./Tile";
-import { TILE_COUNT, GRID_SIZE, BOARD_SIZE } from "./constants";
+import { TILE_COUNT, GRID_SIZE, BOARD_SIZE, SMALL_BOARD_SIZE } from "./constants";
 import { canSwap, shuffle, swap, isSolved } from "./helpers";
+
+// For responsive design
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 640);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 640);
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return isMobile;
+};
+
 
 const Board = ({ imgUrl }) => {
   const [tiles, setTiles] = useState([...Array(TILE_COUNT).keys()]);
   const [isStarted, setIsStarted] = useState(false);
   const [numOfMoves, setNumOfMoves] = useState(0)
+
+  const isMobile = useIsMobile()
 
   const shuffleTiles = () => {
     const shuffleTiles = shuffle(tiles)
@@ -36,8 +53,10 @@ const Board = ({ imgUrl }) => {
     setIsStarted(true);
   }
 
+  const boardSize = isMobile ? SMALL_BOARD_SIZE : BOARD_SIZE
+
   const hasWon = isSolved(tiles);
-  const pieceSize = BOARD_SIZE / GRID_SIZE;
+  const pieceSize = boardSize / GRID_SIZE;
 
   return (
     <div>
@@ -45,8 +64,8 @@ const Board = ({ imgUrl }) => {
         className="grid gap-1 mx-auto"
         style={{
           gridTemplateColumns: `repeat(${GRID_SIZE}, 1fr)`,
-          width: `${BOARD_SIZE}px`,
-          height: `${BOARD_SIZE}px`,
+          width: `${boardSize}px`,
+          height: `${boardSize}px`,
         }}
       >
         {tiles.map((tile, index) => (
@@ -57,7 +76,7 @@ const Board = ({ imgUrl }) => {
             pieceSize={pieceSize}
             imgUrl={imgUrl}
             gridSize={GRID_SIZE}
-            boardSize={BOARD_SIZE}
+            boardSize={boardSize}
             handleClick={handleTileClick}
           />
         ))}

@@ -5,7 +5,7 @@ const Rover = () => {
   const [selectedRover, setSelectedRover] = useState("perseverance")
 
   return (
-    <div className="w-full max-w-7xl px-8 pt-10 pb-20 bg-gray-900 rounded-3xl shadow-lg ">
+    <div className="w-full max-w-7xl px-2 sm:px-8 pt-10 pb-20 bg-gray-900 rounded-3xl shadow-lg ">
       <div className="self-center text-center">
         <h2 className="text-3xl font-bold">Mars Rovers</h2>
         <hr className="border-b-teal-400 border-b-2 border-t-0 w-32 mx-auto my-4"></hr>
@@ -22,7 +22,7 @@ const Rover = () => {
       <div className='flex flex-col sm:flex-row mt-4'>
         <div className="flex flex-row sm:flex-col">
           <button 
-            className={`${selectedRover === "perseverance" ? "bg-cyan-700" : "bg-teal-200 hover:bg-teal-500 text-slate-600"} sm:text-xl font-bold py-2 px-2 sm:px-4 border-2 border-gray-900 border-b-0 sm:border-0 sm:border-b-4 rounded-t-lg sm:rounded-l-lg sm:rounded-tr-none -ml-0.5`}
+            className={`${selectedRover === "perseverance" ? "bg-cyan-700" : "bg-teal-200 hover:bg-teal-500 text-slate-600"} sm:text-xl sm:font-bold text-xs p-1 sm:py-2 sm:px-4 border-2 border-gray-900 border-b-0 sm:border-0 sm:border-b-4 rounded-t-lg sm:rounded-l-lg sm:rounded-tr-none -ml-0.5`}
             onClick={()=>{
               setSelectedRover("perseverance")
             }}
@@ -30,7 +30,7 @@ const Rover = () => {
             Perseverance
           </button>
           <button 
-            className={`${selectedRover === "curiosity" ? "bg-cyan-700" : "bg-teal-200 hover:bg-teal-500 text-slate-600"} sm:text-xl font-bold py-2 px-2 sm:px-4 border-2 border-gray-900 border-b-0 sm:border-0 sm:border-b-4 rounded-t-lg sm:rounded-l-lg sm:rounded-tr-none`}
+            className={`${selectedRover === "curiosity" ? "bg-cyan-700" : "bg-teal-200 hover:bg-teal-500 text-slate-600"} sm:text-xl sm:font-bold text-xs p-1 sm:py-2 sm:px-4 border-2 border-gray-900 border-b-0 sm:border-0 sm:border-b-4 rounded-t-lg sm:rounded-l-lg sm:rounded-tr-none`}
             onClick={()=>{
               setSelectedRover("curiosity")
             }}
@@ -38,7 +38,7 @@ const Rover = () => {
             Curiosity
           </button>
           <button 
-            className={`${selectedRover === "opportunity" ? "bg-cyan-700" : "bg-teal-200 hover:bg-teal-500 text-slate-600"} sm:text-xl font-bold py-2 px-2 sm:px-4 border-2 border-gray-900 border-b-0 sm:border-0 sm:border-b-4 rounded-t-lg sm:rounded-l-lg sm:rounded-tr-none`}
+            className={`${selectedRover === "opportunity" ? "bg-cyan-700" : "bg-teal-200 hover:bg-teal-500 text-slate-600"} sm:text-xl sm:font-bold text-xs p-1 sm:py-2 sm:px-4 border-2 border-gray-900 border-b-0 sm:border-0 sm:border-b-4 rounded-t-lg sm:rounded-l-lg sm:rounded-tr-none`}
             onClick={()=>{
               setSelectedRover("opportunity")
             }}
@@ -46,7 +46,7 @@ const Rover = () => {
             Opportunity
           </button>
           <button 
-            className={`${selectedRover === "spirit" ? "bg-cyan-700" : "bg-teal-200 hover:bg-teal-500 text-slate-600"} sm:text-xl font-bold py-2 px-2 sm:px-4 border-2 border-gray-900 border-b-0 sm:border-0 sm:border-b-4 rounded-t-lg sm:rounded-l-lg sm:rounded-tr-none`}
+            className={`${selectedRover === "spirit" ? "bg-cyan-700" : "bg-teal-200 hover:bg-teal-500 text-slate-600"} sm:text-xl sm:font-bold text-xs p-1 sm:py-2sm:px-4 border-2 border-gray-900 border-b-0 sm:border-0 sm:border-b-4 rounded-t-lg sm:rounded-l-lg sm:rounded-tr-none`}
             onClick={()=>{
               setSelectedRover("spirit")
             }}

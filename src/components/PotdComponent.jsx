@@ -2,7 +2,9 @@ import { useState, useEffect } from "react";
 
 const PotdComponent = () => {
   const [potdData, setPotdData] = useState([]);
-  const apiUrl = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY";
+  const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${
+    import.meta.env.VITE_NASA_API_KEY
+  }`;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,11 +38,11 @@ const PotdComponent = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 pt-10 font-mono">
         <div>
           <img className="img-potd pb-2" src={potdData.url}></img>
-          {potdData.copyright && 
+          {potdData.copyright && (
             <p className="text-sm text-gray-400 text-center">
               Copyright: {potdData.copyright}
             </p>
-          }
+          )}
         </div>
         <div className="content-evenly">
           <h2 className="text-2xl font-bold">{potdData.title}</h2>

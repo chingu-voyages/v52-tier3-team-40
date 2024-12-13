@@ -2,9 +2,7 @@ import { useState, useEffect } from "react";
 
 const PotdComponent = () => {
   const [potdData, setPotdData] = useState([]);
-  const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${
-    import.meta.env.VITE_NASA_API_KEY
-  }`;
+  const apiUrl = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY";
 
   useEffect(() => {
     const fetchData = async () => {

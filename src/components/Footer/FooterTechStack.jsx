@@ -10,7 +10,7 @@ function FooterTechStack({ techstack }) {
   };
 
   return (
-    <div className="box2 px-6 py-6 md:px-8 md:py-8 w-full lg:w-2/3 bg-white border border-footerBoxColor flex flex-col items-center rounded-3xl">
+    <div className="box2 px-6 py-6 md:px-8 md:py-8 w-full lg:w-2/3 border bg-gray-800 border-footerBoxColor flex flex-col items-center rounded-3xl">
       <h2 className="text-2xl font-bold mb-6 text-gray-800 dark:text-white">
         Tech Stack
       </h2>

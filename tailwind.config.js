@@ -16,7 +16,7 @@ export default {
     extend: {
       colors: {
         footerTextColor: "#9bc25b",
-
+        navLinkColor: "#4fd1c5",
         footerBoxColor: "#C6DAF1",
         footerProfileNameColor: "#00000",
         footerBackgroundColor: "#f9f9f9",
@@ -29,5 +29,5 @@ export default {
     }
   },
   darkMode: "class",
-  plugins: [ tailwindScrollbarHide ],
+  plugins: [tailwindScrollbarHide]
 };

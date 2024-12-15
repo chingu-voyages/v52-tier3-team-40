@@ -36,11 +36,11 @@ const PotdComponent = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 pt-10 font-mono">
         <div>
           <img className="img-potd pb-2" src={potdData.url}></img>
-          {potdData.copyright && 
+          {potdData.copyright && (
             <p className="text-sm text-gray-400 text-center">
               Copyright: {potdData.copyright}
             </p>
-          }
+          )}
         </div>
         <div className="content-evenly">
           <h2 className="text-2xl font-bold">{potdData.title}</h2>

@@ -1,8 +1,9 @@
 import React from "react";
 import { getMatrixPosition, getVisualPosition } from "./helpers";
-import { GRID_SIZE, BOARD_SIZE } from "./constants"
+import { GRID_SIZE } from "./constants"
+import StarBackgroundImage from '../../assets/images/puzzle/square.jpg'
 
-const Tile =  ({ tile, index, tileSize, handleClick }) => {
+const Tile =  ({ tile, index, tileSize, boardSize, handleClick }) => {
   const { row, col } = getMatrixPosition(index, 4);
   const { x, y } = getVisualPosition(row, col, tileSize);
 
@@ -14,8 +15,8 @@ const Tile =  ({ tile, index, tileSize, handleClick }) => {
     height: `${tileSize}px`,
     transform: `translate(${x}px, ${y}px)`,
     opacity: tile === 15 ? 0 : 1,
-    backgroundImage: `url(${imgUrl})`,
-    backgroundSize: `${BOARD_SIZE}px`,
+    backgroundImage: `url(${StarBackgroundImage})`,
+    backgroundSize: `${boardSize}px`,
     backgroundPosition: `${(100 / (GRID_SIZE - 1)) * (tile % GRID_SIZE)}% ${(100 / (GRID_SIZE - 1)) * (Math.floor(tile / GRID_SIZE))}%`,
   };
 
